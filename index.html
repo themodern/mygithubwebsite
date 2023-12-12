@@ -1,1 +1,25 @@
-Hello World
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World</title>
+</head>
+<body>
+    <!-- Your HTML content here -->
+    <h1>Hello</h1>
+    <script>
+        fetch('https://secondhello-cyoexqfwna-ts.a.run.app/')
+            .then(response => response.json())
+            .then(data => {
+                // Update your HTML here with the data
+                // For example, you can create a new div and set its text to the JSON string
+                var div = document.createElement('div');
+                div.innerText = JSON.stringify(data, null, 2);
+                document.body.appendChild(div);
+            })
+            .catch(error => console.error('Error:', error));
+    </script>
+</body>
+</html>
